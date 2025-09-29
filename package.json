@@ -8,7 +8,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "vercel-start": "node app.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
