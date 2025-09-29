@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Add New Blog</title>
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .blog-form-card {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 600px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .blog-form-card h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .btn-primary {
+        background: #2575fc;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #6a11cb;
+      }
+
+      label {
+        font-weight: 500;
+      }
+
+      @keyframes fadeIn {
+        0% {opacity: 0; transform: translateY(-20px);}
+        100% {opacity: 1; transform: translateY(0);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-form-card">
+      <h2>Add New Blog</h2>
+      <form action="/blog" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="coverImage" class="form-label">Cover Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="coverImage"
+            name="coverImage"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            placeholder="Enter blog title"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="body" class="form-label">Body</label>
+          <textarea
+            name="body"
+            class="form-control"
+            id="body"
+            rows="6"
+            placeholder="Write your blog content here..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-primary">Submit Blog</button>
+        </div>
+      </form>
+    </div>
+
+    <%- include("./partials/script") %>
+  </body>
+</html>
